@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package jhmi_message;
+
+message SphereLoc {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  double radius = 4;
+  int32  vessel_id = 5;
+}
+
+message SphereLocs {
+  repeated SphereLoc locations = 1;
+}

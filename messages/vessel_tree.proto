@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package jhmi_message;
+
+message Vessel {
+  sint32 id = 1;
+  sint32 parent = 2;
+  sint32 left = 3;
+  sint32 right = 4;
+  double radius = 5;
+  sint32 cell = 6;
+  double flow = 7;
+  double entry_pressure = 8;
+  double exit_pressure = 9;
+  double sx = 10;
+  double sy = 11;
+  double sz = 12;
+  double ex = 13;
+  double ey = 14;
+  double ez = 15;
+  bool is_const = 16;
+}
+
+message Macrocell {
+  sint32 id = 1;
+  double x = 2;
+  double y = 3;
+  double z = 4;
+  double radius = 5;
+  double flow = 6;
+  double pressure = 7;
+  sint32 parent_vessel = 8;
+  sint32 idx_x = 9;
+  sint32 idx_y = 10;
+  sint32 idx_z = 11;
+}
+
+message VesselTree {
+  repeated Vessel vessels = 1;
+  repeated Macrocell macrocells = 2;
+  double tree_flow = 3;
+  double gamma = 4;
+  double cell_pressure = 5;
+}

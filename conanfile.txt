@@ -1,0 +1,25 @@
+[requires]
+fmt/5.3.0
+boost/1.70.0
+range-v3/0.4.0@ericniebler/stable
+TBB/4.4.4@conan/stable
+protobuf/3.9.1
+protoc_installer/3.9.1@bincrafters/stable
+glm/0.9.9.1@g-truc/stable
+Catch/1.12.1@bincrafters/stable
+glew/2.1.0@bincrafters/stable
+sfml/2.5.1@bincrafters/stable
+zlib/1.2.11
+bzip2/1.0.8
+
+[options]
+protobuf:with_zlib=True
+sfml:window=True
+sfml:graphics=True
+
+[generators]
+cmake
+
+[imports]
+lib, *.dylib* -> ./lib
+

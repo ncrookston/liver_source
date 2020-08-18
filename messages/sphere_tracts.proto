@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package jhmi_message;
+
+message SphereTract {
+  uint32 vessel_id = 1;
+  double sx = 2;
+  double sy = 3;
+  double sz = 4;
+  double ex = 5;
+  double ey = 6;
+  double ez = 7;
+  uint32 num_spheres = 8;
+}
+
+message SphereTracts {
+  double sphere_diameter = 1;
+  repeated SphereTract tracts = 2;
+}

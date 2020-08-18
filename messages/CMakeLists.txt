@@ -1,0 +1,5 @@
+find_package(Protobuf REQUIRED)
+protobuf_generate_cpp(PROTO_SOURCES PROTO_HEADERS sphere_locs.proto sphere_tracts.proto vessel_tree.proto)
+add_library(messages STATIC ${PROTO_SOURCES} ${PROTO_HEADERS})
+target_include_directories(messages PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_link_libraries(messages PUBLIC protobuf::libprotobuf)
